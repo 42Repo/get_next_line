@@ -6,7 +6,7 @@
 /*   By: asuc <asuc@student.42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 01:57:58 by asuc              #+#    #+#             */
-/*   Updated: 2023/11/07 01:58:01 by asuc             ###   ########.fr       */
+/*   Updated: 2023/11/07 04:51:07 by asuc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ char	*read_line(int fd, char **buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer[OPEN_MAX + 1];
+	static char	*buffer[OPEN_MAX];
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || fd > OPEN_MAX)
 		return (NULL);

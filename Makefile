@@ -22,13 +22,12 @@ SRC		=	get_next_line.c\
 			get_next_line_utils.c\
 			main.c
 
-
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)
 
 %.o : %.c
-	@$(COMP) $(CFLAGS) -o $@ -c $< -I $(HEAD)
+	@$(COMP) $(CFLAGS) -o $@ -c $<
 
 $(NAME) : $(OBJ)
 	@clang -g $(CFLAGS) -D BUFFER_SIZE=600000000 $(OBJ) -o test
@@ -47,6 +46,11 @@ fclean : clean
 
 test : $(NAME)
 	@./test
+
+test2 : $(NAME)
+	@cp -rf ../gnlTest ./gnlTest
+	@make -C ./gnlTest
+	@rm -rf ./gnlTest
 
 re : fclean all
 
