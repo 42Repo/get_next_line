@@ -1,0 +1,8 @@
+../get_next_line_utils.c: Error!
+Error: CONSECUTIVE_NEWLINES (line:  40, col:   1):	Consecutive newlines
+Error: TOO_MANY_FUNCS       (line:  95, col:   1):	Too many functions in file
+Error: TOO_MANY_FUNCS       (line: 105, col:   1):	Too many functions in file
+Error: TOO_MANY_FUNCS       (line: 120, col:   1):	Too many functions in file
+Error: TOO_MANY_FUNCS       (line: 125, col:   1):	Too many functions in file
+Error: TOO_MANY_FUNCS       (line: 141, col:   1):	Too many functions in file
+Error: TOO_MANY_FUNCS       (line: 160, col:   1):	Too many functions in file

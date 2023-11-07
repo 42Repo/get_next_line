@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asuc <asuc@student.42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 20:34:06 by asuc              #+#    #+#             */
-/*   Updated: 2023/11/07 02:03:29 by asuc             ###   ########.fr       */
+/*   Created: 2023/11/07 01:58:04 by asuc              #+#    #+#             */
+/*   Updated: 2023/11/07 01:58:06 by asuc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+static char	*ft_strcpy(char *dest, const char *src)
 {
 	int	i;
 
@@ -56,7 +56,7 @@ char	*ft_strchr(const char *str, int c)
 	return (NULL);
 }
 
-char	*ft_strcat(char *dest, char *src)
+static char	*ft_strcat(char *dest, char *src)
 {
 	int	i;
 	int	j;
