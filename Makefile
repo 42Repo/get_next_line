@@ -48,6 +48,9 @@ test : $(NAME)
 	@./test
 
 test2 : $(NAME)
+	@cp -rf ../gnl-station-tester ./gnl-station-tester
+	@make -C ./gnl-station-tester
+	@rm -rf ./gnl-station-tester
 	@cp -rf ../gnlTest ./gnlTest
 	@make -C ./gnlTest
 	@rm -rf ./gnlTest
