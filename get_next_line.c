@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*																			*/
-/*														:::	  ::::::::   */
-/*   get_next_line.c									:+:	  :+:	:+:   */
-/*													+:+ +:+		 +:+	 */
-/*   By: asuc <asuc@student.42angouleme.fr>		 +#+  +:+	   +#+		*/
-/*												+#+#+#+#+#+   +#+		   */
-/*   Created: 2023/11/06 22:52:31 by asuc			  #+#	#+#			 */
-/*   Updated: 2023/11/06 23:57:40 by asuc			 ###   ########.fr	   */
-/*																			*/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asuc <asuc@student.42angouleme.fr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/08 19:51:27 by asuc              #+#    #+#             */
+/*   Updated: 2023/11/08 19:51:47 by asuc             ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
@@ -29,7 +29,10 @@ char	*join_line(char **buffer, ssize_t nl_index)
 	if (nl_index >= 0)
 	{
 		line = ft_substr(*buffer, 0, nl_index + 1);
-		new_buffer = ft_strdup(*buffer + nl_index + 1);
+		if ((*buffer)[nl_index + 1] == '\0')
+			new_buffer = NULL;
+		else
+			new_buffer = ft_strdup(*buffer + nl_index + 1);
 		free_null(buffer);
 		*buffer = new_buffer;
 	}
@@ -77,7 +80,7 @@ char	*read_line(int fd, char **buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer[OPEN_MAX + 1];
+	static char	*buffer[OPEN_MAX];
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || fd > OPEN_MAX)
 		return (NULL);

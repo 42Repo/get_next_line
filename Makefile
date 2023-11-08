@@ -16,10 +16,8 @@ BRed	=	$(shell echo "\033[1;31m")
 NAME 	=	libftprintf.a
 COMP 	=	cc
 CFLAGS 	=	-Wall -Werror -Wextra
-HEAD	=	get_next_line.h
-libft	=	libft/
-SRC		=	get_next_line.c\
-			get_next_line_utils.c\
+SRC		=	get_next_line_bonus.c\
+			get_next_line_utils_bonus.c\
 			main.c
 
 OBJ = $(SRC:.c=.o)
@@ -30,24 +28,22 @@ all : $(NAME)
 	@$(COMP) $(CFLAGS) -o $@ -c $<
 
 $(NAME) : $(OBJ)
-	@clang -g $(CFLAGS) -D BUFFER_SIZE=600000000 $(OBJ) -o test
+	@$(COMP) -g $(CFLAGS) $(SRC) -D BUFFER_SIZE=42 -o test
 	@echo "$(BGreen)Compilation OK$(RESET)"
 
 clean :
-	@make clean --no-print-directory -C $(libft)
 	@rm -f $(OBJ)
 	@echo "$(BRed)Erase .o files$(RESET)"
 
 
 fclean : clean
-	@make fclean --no-print-directory -C $(libft)
 	@rm -f test
 	@echo "$(BRed)Erase test$(RESET)"
 
 test : $(NAME)
-	@./test
+	@valgrind --track-origins=yes --track-fds=yes --leak-check=full -s --show-leak-kinds=all ./test
 
-test2 : $(NAME)
+test2 :
 	@cp -rf ../gnl-station-tester ./gnl-station-tester
 	@make -C ./gnl-station-tester
 	@rm -rf ./gnl-station-tester
@@ -57,6 +53,6 @@ test2 : $(NAME)
 
 re : fclean all
 
-.PHONY: all fclean clean re
+.PHONY: all fclean clean re test test2
 
 

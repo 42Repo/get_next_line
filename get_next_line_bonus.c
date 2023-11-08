@@ -6,7 +6,7 @@
 /*   By: asuc <asuc@student.42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 01:57:58 by asuc              #+#    #+#             */
-/*   Updated: 2023/11/07 04:51:07 by asuc             ###   ########.fr       */
+/*   Updated: 2023/11/08 19:52:55 by asuc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ char	*join_line(char **buffer, ssize_t nl_index)
 	if (nl_index >= 0)
 	{
 		line = ft_substr(*buffer, 0, nl_index + 1);
-		new_buffer = ft_strdup(*buffer + nl_index + 1);
+		if ((*buffer)[nl_index + 1] == '\0')
+			new_buffer = NULL;
+		else
+			new_buffer = ft_strdup(*buffer + nl_index + 1);
 		free_null(buffer);
 		*buffer = new_buffer;
 	}
