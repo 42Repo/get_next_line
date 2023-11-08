@@ -6,7 +6,7 @@
 /*   By: asuc <asuc@student.42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 20:34:06 by asuc              #+#    #+#             */
-/*   Updated: 2023/11/08 19:49:40 by asuc             ###   ########.fr       */
+/*   Updated: 2023/11/09 00:35:04 by asuc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ char	*ft_strdup(const char *s)
 
 char	*ft_strchr(const char *str, int c)
 {
+	if (!str)
+		return (NULL);
 	while (*str != '\0')
 	{
 		if (*str == (char)c)
