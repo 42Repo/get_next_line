@@ -6,7 +6,7 @@
 /*   By: asuc <asuc@student.42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 20:44:35 by asuc              #+#    #+#             */
-/*   Updated: 2023/11/08 19:49:09 by asuc             ###   ########.fr       */
+/*   Updated: 2023/11/08 21:31:29 by asuc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,25 @@ int	main(void)
 	int		fd;
 	int		fd2;
 
-	fd = open("teeeest", O_RDONLY);
-	fd2 = open("cacamdr", O_RDONLY);
+	fd = open("a.txt", O_RDONLY);
+	fd2 = -1 ;
 	line = get_next_line(fd);
 	printf("%s\n", line);
 	free(line);
 	line = get_next_line(fd2);
-	printf("%s\n", line);
+	//printf("%s\n", line);
 	free(line);
 	line = get_next_line(fd);
-	printf("%s\n", line);
+	//printf("%s\n", line);
 	free(line);
 	line = get_next_line(fd2);
-	printf("%s\n", line);
+	//printf("%s\n", line);
 	free(line);
 	line = get_next_line(fd2);
-	printf("%s\n", line);
+	//printf("%s\n", line);
 	free(line);
 	line = get_next_line(fd2);
-	printf("%s\n", line);
+	//printf("%s\n", line);
 	free(line);
 	close(fd);
 	close(fd2);

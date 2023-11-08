@@ -41,7 +41,7 @@ fclean : clean
 	@echo "$(BRed)Erase test$(RESET)"
 
 test : $(NAME)
-	@valgrind --track-origins=yes --track-fds=yes --leak-check=full -s --show-leak-kinds=all ./test
+	@valgrind --track-origins=yes --tool=memcheck --track-fds=yes --leak-check=full -s --show-leak-kinds=all ./test
 
 test2 :
 	@cp -rf ../gnl-station-tester ./gnl-station-tester
