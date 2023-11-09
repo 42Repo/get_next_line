@@ -6,13 +6,13 @@
 /*   By: asuc <asuc@student.42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 19:51:27 by asuc              #+#    #+#             */
-/*   Updated: 2023/11/09 00:49:01 by asuc             ###   ########.fr       */
+/*   Updated: 2023/11/09 01:13:10 by asuc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static void	free_null(char **ptr)
+void	free_null(char **ptr)
 {
 	if (ptr && *ptr)
 	{
@@ -21,7 +21,7 @@ static void	free_null(char **ptr)
 	}
 }
 
-static char	*join_line(char **buffer, ssize_t nl_index)
+char	*join_line(char **buffer, ssize_t nl_index)
 {
 	char	*line;
 	char	*new_buffer;
@@ -49,7 +49,7 @@ static char	*join_line(char **buffer, ssize_t nl_index)
 	return (line);
 }
 
-static char	*read_line(int fd, char **buffer)
+char	*read_line(int fd, char **buffer)
 {
 	char	*read_buffer;
 	ssize_t	bytes_read;

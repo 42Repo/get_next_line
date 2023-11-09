@@ -44,9 +44,9 @@ test : $(NAME)
 	@valgrind --track-origins=yes --tool=memcheck --track-fds=yes --leak-check=full -s --show-leak-kinds=all ./test
 
 test2 :
-	@cp -rf ../gnl-station-tester ./gnl-station-tester
-	@make -C ./gnl-station-tester
-	@rm -rf ./gnl-station-tester
+#	@cp -rf ../gnl-station-tester ./gnl-station-tester
+#	@make -C ./gnl-station-tester
+#	@rm -rf ./gnl-station-tester
 	@cp -rf ../gnlTest ./gnlTest
 	@make -C ./gnlTest
 	@rm -rf ./gnlTest
